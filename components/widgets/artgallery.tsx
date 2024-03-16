@@ -8,7 +8,8 @@ interface ArtisteGallery {
   nom: string;
   genreMusical: string;
   ville: string;
-  image: string;
+  link: string;
+  imageSrc: string;
   categories: string;
 
   social_link_1: string;
@@ -24,7 +25,9 @@ interface ArtisteGallery {
   social_link_6: string;
   social_link_6_icon: string;
 }
-const artistes: ArtisteProps[] = [
+const artistes: ArtisteGallery[
+
+] = [
   {
     id: 1,
     nom: "Toska",
