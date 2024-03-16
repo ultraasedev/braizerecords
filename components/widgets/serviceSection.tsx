@@ -8,7 +8,7 @@ const ServiceSection = () => {
           <div className="container mx-auto px-4">
           <div className="text-center py-8 mb-2">
           <h1 className="text-4xl font-bold">Labels & Services</h1>
-          <p className="mt-2">Decouvre toutes les etendues de nos Prestations Labels & Services ainsi que nos differents Poles d'activites .</p>
+          <p className="mt-2">Decouvre toutes les etendues de nos Prestations Labels & Services ainsi que nos differents Poles d activites .</p>
           </div>
    
     <div className="bg-black rounded-lg flex items-center w-full mb-8">

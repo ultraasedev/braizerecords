@@ -76,7 +76,7 @@ const newsData: NewsItem[] = [
         <section className=" h-[700px] w-full mx-auto px-4  bg-black" id="news">
           <div className="text-center py-8 mb-2">
           <h1 className="text-4xl font-bold">NEWS</h1>
-          <p className="mt-2">Decouvre toutes les entendues de notre Prestations Labels & Services ainsi que nos differents Poles d'activites .</p>
+          <p className="mt-2">Decouvre toutes les entendues de notre Prestations Labels & Services ainsi que nos differents Poles d activites .</p>
           </div>
         <div className=" relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {/* Affiche 4 articles à la fois */}
