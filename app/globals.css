@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar{
+  width: 0;
+}
+html,body,*{
+  font-family: 'Clash Display';
+  margin: 0;
+  padding: 0;
+}
+a{
+  text-decoration: none;
+}
+li{
+  list-style: none;
+}
+.jobsbutton{
+  background-color: #fff;
+  color:#141414;
+  height: 38px;
+  border-radius: 60px;
+  width: 150px;
+}
+.icons-social i , .icons-social .fa-facebook ,
+.fa-instagram,
+.fa-tiktok {
+  font-size: 20px;
+  justify-content: space-between;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.mobilenav{
+  font-size: 20px;
+  margin-right: 5px;
+  margin-bottom: 25px;
+}
+.mobilenav .fa-bars{
+  font-size: 30px;
+  margin-left: 7px;
+  margin-top: 25px;
+}
+footer{
+  overflow: hidden;
+}
