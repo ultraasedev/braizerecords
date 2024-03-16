@@ -13,51 +13,51 @@ interface NewsItem  {
 const newsData: NewsItem[] = [
     {
       id: 1,
-      title: 'TITRE ARTICLE',
-      date: '2 SEP 2023',
-      commentsCount: 0,
-      category: 'ACTULABEL',
-      imageUrl: '/slide_01.png',
+      title: "TITRE ARTICLE",
+        date: "1 SEP 2023",
+        commentsCount: 0,
+        category: "ACTULABEL",
+        imageUrl: "/slide_01.png",
     },
     {
         id: 2,
-        title: 'TITRE ARTICLE',
-        date: '2 SEP 2023',
+        title: "TITRE ARTICLE",
+        date: "2 SEP 2023",
         commentsCount: 0,
-        category: 'ACTULABEL',
-        imageUrl: '/slide_01.png',
+        category: "ACTULABEL",
+        imageUrl: "/slide_01.png",
       },
       {
         id: 3,
-        title: 'TITRE ARTICLE',
-        date: '3 SEP 2023',
-        commentsCount: 5,
-        category: 'ACTULABEL',
-        imageUrl: '/slide_01.png',
+        title: "TITRE ARTICLE",
+        date: "3 SEP 2023",
+        commentsCount: 0,
+        category: "ACTULABEL",
+        imageUrl: "/slide_01.png",
       },
       {
         id: 4,
-        title: 'TITRE ARTICLE',
-        date: '4 SEP 2023',
+        title: "TITRE ARTICLE",
+        date: "4 SEP 2023",
         commentsCount: 0,
-        category: 'ACTULABEL',
-        imageUrl: '/slide_01.png',
+        category: "ACTULABEL",
+        imageUrl: "/slide_01.png",
       },
       {
         id: 5,
-        title: 'TITRE ARTICLE',
-        date: '5 SEP 2023',
+        title: "TITRE ARTICLE",
+        date: "5 SEP 2023",
         commentsCount: 0,
-        category: 'ACTULABEL',
-        imageUrl: '/slide_01.png',
+        category: "ACTULABEL",
+        imageUrl: "/slide_01.png",
       },
       {
         id: 6,
-        title: 'TITRE ARTICLE',
-        date: '6 SEP 2023',
+        title: "TITRE ARTICLE",
+        date: "6 SEP 2023",
         commentsCount: 0,
-        category: 'ACTULABEL',
-        imageUrl: '/slide_01.png',
+        category: "ACTULABEL",
+        imageUrl: "/slide_01.png",
       },
     // ... Deux autres objets NewsItem
   ];
@@ -76,7 +76,7 @@ const newsData: NewsItem[] = [
         <section className=" h-[700px] w-full mx-auto px-4  bg-black" id="news">
           <div className="text-center py-8 mb-2">
           <h1 className="text-4xl font-bold">NEWS</h1>
-          <p className="mt-2">Decouvre toutes les entendues de notre Prestations Labels & Services ainsi que nos differents Poles d activites .</p>
+          <p className="mt-2">Decouvre toutes les entendues de notre Prestations Labels et Services ainsi que nos differents Poles d activites .</p>
           </div>
         <div className=" relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {/* Affiche 4 articles à la fois */}

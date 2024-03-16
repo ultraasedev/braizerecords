@@ -79,7 +79,7 @@ const artistes: ArtisteProps[] = [
     imageSrc: "/artsec/6.png",
     categories: ["360", "management"],
   },
-  // Ajoutez d'autres artistes ici
+  // Ajoutez d autres artistes ici
 ];
 
 const categories = [
@@ -109,7 +109,7 @@ const ArtGallery: React.FC = () => {
       <div className="bg-black text-white">
         <div className="text-center py-8">
           <h1 className="text-4xl font-bold">NOS ARTISTES</h1>
-          <p className="mt-2">Decouvre la liste de nos artistes et l accompagnement qu'ont leurs propose .</p>
+          <p className="mt-2">Decouvre la liste de nos artistes et l accompagnement qu ont leurs propose .</p>
           <div className="flex justify-center my-4">
             {categories.map((categorie) => (
               <button
