@@ -138,7 +138,7 @@ const ArtGallery: React.FC = () => {
 
 
     return (
-      <section className="relative h-[900px] w-full bg-black text-white" id="art_section">
+      <section className="relative h-[1100px] w-full bg-black text-white" id="art_section">
       <div className="bg-black text-white">
         <div className="text-center py-8">
           <h1 className="text-4xl font-bold">NOS ARTISTES</h1>
@@ -165,22 +165,23 @@ const ArtGallery: React.FC = () => {
                   alt={artiste.nom}
                   width={400}
                   height="900"
+                  objectFit="cover"
                   className="rounded-lg"
                 />
                 <div className="absolute left-0 bottom-0 flex items-center p-4 bg-black bg-opacity-75 rounded-r-lg" >
                   {artiste.socialLinks.facebook && (
                     <Link href={artiste.socialLinks.facebook} target="_blank" rel="noopener noreferrer" className="mr-2 text-red-500">
-                      <FaFacebook className="text-white hover:text-red-500" />
+                      <FaFacebook className="text-white hover:text-[#3b5998]" />
                     </Link>
                   )}
                   {artiste.socialLinks.twitter && (
                     <Link href={artiste.socialLinks.twitter} target="_blank" rel="noopener noreferrer" className="mr-2 text-red-500">
-                      <FaTwitter className="text-white hover:text-red-500"/>
+                      <FaTwitter className="text-white hover:text-[#1DA1F2]"/>
                     </Link>
                   )}
                   {artiste.socialLinks.instagram && (
                     <Link href={artiste.socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="mr-2 text-red-500">
-                      <FaInstagram className="text-white hover:text-red-500"/>
+                      <FaInstagram className="text-white hover:text-[#833AB4]"/>
                     </Link>
                   )}
                   {artiste.socialLinks.youtube && (
@@ -190,12 +191,12 @@ const ArtGallery: React.FC = () => {
                   )}
                   {artiste.socialLinks.spotify && (
                     <Link href={artiste.socialLinks.spotify} target="_blank" rel="noopener noreferrer" className="mr-2 text-red-500">
-                      <FaSpotify className="text-white hover:text-red-500"/>
+                      <FaSpotify className="text-white hover:text-[#1ED760]"/>
                     </Link>
                   )}
                   {artiste.socialLinks.soundcloud && (
                     <Link href={artiste.socialLinks.soundcloud} target="_blank" rel="noopener noreferrer" className="text-red-500">
-                      <FaSoundcloud className="text-white hover:text-red-500" />
+                      <FaSoundcloud className="text-white hover:text-[#ff5500]" />
                     </Link>
                   )}
                 </div>
