@@ -48,6 +48,9 @@ export const HomeSlider = () => {
           description="Apres la tournée des Zenith en 2023 , Lashka reviens avec son nouveau single , un titre engage ou il denonce le dure monde du travail..."
           buttonActionTitle="Ecouter Maintenant"
           buttonActionIcon="fa-solid fa-circle-play"
+          buttonActionLink="/"
+          altimages="Lashka - Burn Out"
+
         />
         <SliderItem
           itemActive={itemActive}
@@ -58,6 +61,8 @@ export const HomeSlider = () => {
           description="Apres la tournée des Zenith en 2023 , Shakaoui reviens avec de nouvelles dates partout en France dont au Zenith de Nantes le 15.03.26 ..."
           buttonActionTitle="Reserver Maintenant"
           buttonActionIcon="fa-solid fa-ticket"
+          buttonActionLink="/"
+          altimages="Shakaoui - Olympia Nantes"
         />
         <SliderItem
           itemActive={itemActive}
@@ -68,6 +73,8 @@ export const HomeSlider = () => {
           description="Etoile Montante du rap US sur la scene Francaise , c'eest apres le succes de Maskaoff et Feu que Makadam ,debute l'annee 2024 avec le titre explosif Fly Air . . . "
           buttonActionTitle="Ecouter Maintenant"
           buttonActionIcon="fa-solid fa-circle-play"
+          buttonActionLink="/"
+          altimages="Makadam - Fly Air"
         />
           <SliderItem
           itemActive={itemActive}
@@ -78,6 +85,8 @@ export const HomeSlider = () => {
           description="Etoile Montante du rap US sur la scene Francaise , c'eest apres le succes de Maskaoff et Feu que Makadam ,debute l'annee 2024 avec le titre explosif Fly Air . . . "
           buttonActionTitle="Ecouter Maintenant"
           buttonActionIcon="fa-solid fa-circle-play"
+          buttonActionLink="/"
+          altimages="Nephi - Seul"
         />
           <SliderItem
           itemActive={itemActive}
@@ -88,6 +97,8 @@ export const HomeSlider = () => {
           description="Etoile Montante du rap US sur la scene Francaise , c'eest apres le succes de Maskaoff et Feu que Makadam ,debute l'annee 2024 avec le titre explosif Fly Air . . . "
           buttonActionTitle="Ecouter Maintenant"
           buttonActionIcon="fa-solid fa-circle-play"
+          buttonActionLink="/"
+          altimages="Underground Fest"
         />
       </ul>
     <SliderArrows onClickPrev={onPrev} onClickNext={onNext} />

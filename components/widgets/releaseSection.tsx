@@ -31,7 +31,7 @@ const ReleaseSection: React.FC = () => {
   const filteredCards = activeFilter === 'all' ? cardData : cardData.filter(card => card.type === activeFilter);
 
   return (
-    <div className="bg-black py-5 px-4 text-center">
+    <section className="bg-black py-5 px-4 text-center">
         <div className="text-center py-8">
           <h1 className="text-4xl font-bold">NOS DERNIERES REALISATIONS</h1>
           <p className="mt-2">Decouvre notre discographie , nos dernieres realisations et clip .</p>
@@ -98,7 +98,7 @@ const ReleaseSection: React.FC = () => {
         ))}
       </div>
     </div>
-    </div>
+    </section>
   );
 };
 

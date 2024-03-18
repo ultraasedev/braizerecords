@@ -1,11 +1,12 @@
 import { cn } from "@/lib/utils";
 import Image from 'next/image';
 
-interface ThumbnailsItemProps {
+interface ThumbnailsItemsProps {
     itemActive: number;
     id: number;
     image: string;
     name: string;
+    description: string;
     onClick: () => void;
 }
 
