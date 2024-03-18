@@ -15,7 +15,7 @@ interface SliderItemPropos{
 }
 export const SliderItem = ({itemActive,id,images,altimages,buttonTypeTitle,title,description,buttonActionTitle,buttonActionIcon}: SliderItemPropos) => {
     return (  
-         <li className={cn("absolute inset-0 overflow-hidden after:absolute after:w-full after:h-full after:left-0 after:bottom-0 after:bg-slider", itemActive === id ? "opacity-100 z-10" : "opacity-0")}>
+         <li className={cn("absolute inset-0 overflow-hidden after:absolute after:w-full after:h-full after:left-0 after:bottom-0 after:bg-slider ", itemActive === id ? "opacity-100 z-10" : "opacity-0")}>
             <div className="relative w-full h-full transition-all duration-500">
              <Image src={images} alt={altimages} fill className="object-cover" />
             </div>

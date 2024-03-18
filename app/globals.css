@@ -5,10 +5,14 @@
 ::-webkit-scrollbar{
   width: 0;
 }
+html{
+   overflow-x: hidden;
+}
 html,body,*{
   font-family: 'Clash Display';
   margin: 0;
   padding: 0;
+ 
 }
 a{
   text-decoration: none;

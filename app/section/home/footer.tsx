@@ -1,7 +1,7 @@
 import Link from 'next/link';
 const Footer = () => {
     return ( 
-        <footer className="absolute bg-black text-white w-full border-t-red">
+        <footer className="relative bg-black text-white w-full border-t-red">
         <div className=" mx-auto px-4 py-10">
           {/* Section d inscription à la newsletter avec un fond rouge */}
           <div className="bg-red-500 p-6 rounded-lg shadow-md text-center w-full">
