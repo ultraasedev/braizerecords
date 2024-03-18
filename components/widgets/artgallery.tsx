@@ -148,7 +148,7 @@ const ArtGallery: React.FC = () => {
               <button
                 key={categorie}
                 onClick={() => setCategorieActive(categorie)}
-                className={`mx-2 text-sm font-semibold ${categorieActive === categorie ? "text-red-500" : "text-gray-400"}`}
+                className={`mx-2 text-sm font-semibold  opacity-55 hover:opacity-100 hover:text-white ${categorieActive === categorie ? "text-red-500" : "text-gray-400"}`}
               >
                 {categorie.toUpperCase()}
               </button>
@@ -158,7 +158,7 @@ const ArtGallery: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-8 p-6 justify-items-center">
         {artistesFiltres.map((artiste) => (
           <Link href={artiste.link} key={artiste.link}>
-            <div className="flex flex-col items-center w-300">
+            <div className="flex flex-col items-center w-300 opacity-55 hover:opacity-100">
               <div className="relative w-full h-700 rounded-lg overflow-hidden">
                 <Image
                   src={artiste.imageSrc}
@@ -202,9 +202,9 @@ const ArtGallery: React.FC = () => {
                 </div>
               </div>
               <div className="mt-4 text-center">
-                <h3 className="text-xl font-bold">{artiste.nom}</h3>
+                <h3 className="text-xl font-bold tracking-wider">{artiste.nom}</h3>
                 <p className="text-xs text-[#8f1e1e] font-semibold">{`${artiste.genreMusical.toUpperCase()}`}</p>
-                <p className="text-xs font-medium">{artiste.ville}</p>
+                <p className="text-xs font-medium tracking-widest">{artiste.ville}</p>
               </div>
             </div>
           </Link>

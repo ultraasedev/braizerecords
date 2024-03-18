@@ -37,31 +37,31 @@ const ReleaseSection: React.FC = () => {
           <p className="mt-2">Decouvre notre discographie , nos dernieres realisations et clip .</p>
           <div className="flex justify-center my-4">
         <span
-          className={`cursor-pointer mx-2 text-sm font-semibold  px-4 py-2 ${activeFilter === 'all' ? 'text-red-500' : 'text-white'}`}
+          className={`cursor-pointer mx-2 text-sm font-semibold uppercase  px-4 py-2 ${activeFilter === 'all' ? 'text-red-500' : 'text-gray-400'}`}
           onClick={() => filterCards('all')}
         >
           All
         </span>
         <span
-          className={`cursor-pointer px-4 py-2 ${activeFilter === 'single' ? 'text-red-500' : 'text-white'}`}
+          className={`cursor-pointer px-4 py-2 text-sm font-semibold uppercase  opacity-55 hover:opacity-100 hover:text-white ${activeFilter === 'single' ? 'text-red-500' : 'text-gray-400'}`}
           onClick={() => filterCards('single')}
         >
           Single
         </span>
         <span
-          className={`cursor-pointer px-4 py-2 ${activeFilter === 'ep' ? 'text-red-500' : 'text-white'}`}
+          className={`cursor-pointer px-4 py-2 text-sm font-semibold uppercase  opacity-55 hover:opacity-100 hover:text-white ${activeFilter === 'ep' ? 'text-red-500' : 'text-gray-400'}`}
           onClick={() => filterCards('ep')}
         >
           EP
         </span>
         <span
-          className={`cursor-pointer px-4 py-2 ${activeFilter === 'album' ? 'text-red-500' : 'text-white'}`}
+          className={`cursor-pointer px-4 py-2 text-sm font-semibold uppercase  opacity-55 hover:opacity-100 hover:text-white ${activeFilter === 'album' ? 'text-red-500' : 'text-gray-400'}`}
           onClick={() => filterCards('album')}
         >
           Albums
         </span>
         <span
-          className={`cursor-pointer px-4 py-2 ${activeFilter === 'clip' ? 'text-red-500' : 'text-white'}`}
+          className={`cursor-pointer px-4 py-2 text-sm font-semibold uppercase  opacity-55 hover:opacity-100 hover:text-white ${activeFilter === 'clip' ? 'text-red-500' : 'text-gray-400'}`}
           onClick={() => filterCards('clip')}
         >
           Clip
@@ -69,9 +69,9 @@ const ReleaseSection: React.FC = () => {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center">
         {filteredCards.map((card, index) => (
-          <div key={index} className="bg-[#1a1a1a] rounded-lg overflow-hidden relative">
+          <div key={index} className="bg-[#1a1a1a] rounded-lg overflow-hidden relative opacity-55 hover:opacity-100">
             <Link href="#">
-              <Image src={card.coverImage} alt="Cover" className="w-full backdrop-sepia-0 hover:opacity-15" width={280} height={280}/>
+              <Image src={card.coverImage} alt="Cover" className="w-full backdrop-sepia-0 " width={280} height={280}/>
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white hover:text-red-500 text-2xl cursor-pointer">
                 &#9658;
               </div>
@@ -80,13 +80,13 @@ const ReleaseSection: React.FC = () => {
               <span className="block font-bold text-white">{card.artistName}</span>
               <span className="text-red-500">{card.title}</span>
               <div className="mt-2 flex align-center justify-center text-center">
-                <Link href="#" className="text-white mr-2 hover:text-red-500 ">
-                  <FaSpotify />
+                <Link href="#" className="text-white mr-2 hover:text-[#1DB954] ">
+                  <FaSpotify/>
                 </Link>
-                <Link href="#" className="text-white mr-2 hover:text-red-500">
+                <Link href="#" className="text-white mr-2 hover:text-[#660066]">
                   <FaApple />
                 </Link>
-                <Link href="#" className="text-white mr-2 hover:text-red-500">
+                <Link href="#" className="text-white mr-2 hover:text-[#2E44B4]">
                   <FaNapster />
                 </Link>
                 <Link href="#" className="text-white  hover:text-red-500">
