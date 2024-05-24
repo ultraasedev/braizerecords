@@ -78,7 +78,7 @@ const newsData: NewsItem[] = [
           <h1 className="text-4xl font-bold">NEWS</h1>
           <p className="mt-2">Decouvre toutes les entendues de notre Prestations Labels et Services ainsi que nos differents Poles d activites .</p>
           </div>
-        <div className=" relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className=" relative grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {/* Affiche 4 articles à la fois */}
           {newsData.slice(activeIndex, activeIndex + 4).map((news) => (
             <div key={news.id} className="flex flex-col items-center mt-[30px] space-y-4">

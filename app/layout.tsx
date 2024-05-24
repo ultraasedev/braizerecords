@@ -29,10 +29,11 @@ export default function RootLayout({
         <Header />
 
         {children}
+
+        <Footer/>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/fontawesome.min.js" integrity="sha512-C8qHv0HOaf4yoA7ISuuCTrsPX8qjolYTZyoFRKNA9dFKnxgzIHnYTOJhXQIt6zwpIFzCrRzUBuVgtC4e5K1nhA==" crossOrigin="anonymous" referrerPolicy="no-referrer" defer></script>
        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" integrity="sha512-GWzVrcGlo0TxTRvz9ttioyYJ+Wwk9Ck0G81D+eO63BaqHaJ3YZX9wuqjwgfcV/MrB2PhaVX9DkYVhbFpStnqpQ==" crossOrigin="anonymous" referrerPolicy="no-referrer" defer></script>
        <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js" defer></script>
-       <Footer/>
         </body>
     </html>
   );

@@ -155,7 +155,7 @@ const ArtGallery: React.FC = () => {
             ))}
           </div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-8 p-6 justify-items-center">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-8 p-6 justify-items-center">
         {artistesFiltres.map((artiste) => (
           <Link href={artiste.link} key={artiste.link}>
             <div className="flex flex-col items-center w-300 opacity-55 hover:opacity-100">
