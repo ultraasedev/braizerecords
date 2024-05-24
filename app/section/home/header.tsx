@@ -19,22 +19,23 @@ export const Header = () => {
             <Image src="/logo.png" width="100" height="100" alt="Logo" />
           </div>
         </Link>
-        <div className="hidden md:flex flex-row justify-between items-center gap-3 text-lg uppercase">
-          <Link href="#art_section" className="mr-3 hover:text-red-500 font-semibold">
-            Artistes
-          </Link>
-          <Link href="#" className="mr-3 hover:text-red-500 font-semibold">
-            Dernières Sorties
-          </Link>
-          <Link href="#" className="mr-3 hover:text-red-500 font-semibold">
-            Services
-          </Link>
-          <Link href="#news" className="mr-3 hover:text-red-500 font-semibold">
-            News
-          </Link>
-          <Link href="/contact" className="mr-3 hover:text-red-500 font-semibold">
-            Contact
-          </Link>
+        <div className="hidden md:flex flex-row justify-between items-center gap-3 text-md uppercase">
+        <Link href="#art_section" className="mr-3 hover:text-red-500 font-semibold transition-all duration-200 hover:text-xl hover:italic hover:font-black">
+          Artistes
+        </Link>
+        <Link href="#" className="mr-3 hover:text-red-500 font-semibold transition-all duration-200 hover:text-xl hover:italic hover:font-black">
+          Dernières Sorties
+        </Link>
+        <Link href="#" className="mr-3 hover:text-red-500 font-semibold transition-all duration-200 hover:text-xl hover:italic hover:font-black">
+          Services
+        </Link>
+        <Link href="#news" className="mr-3 hover:text-red-500 font-semibold transition-all duration-200 hover:text-xl hover:italic hover:font-black">
+          News
+        </Link>
+        <Link href="/contact" className="mr-3 hover:text-red-500 font-semibold transition-all duration-200 hover:text-xl hover:italic hover:font-black">
+          Contact
+        </Link>
+
           <div className="join-us flex flex-row justify-between items-center gap-5 mr-5 text-1xl">
             <button className="jobsbutton hover:bg-red-700 hover:text-white">
               <Link href="#" className="text-center uppercase font-semibold text-xs tracking-wider">

@@ -65,7 +65,7 @@ li {
 }
 
 .cta-button {
-  transition: font-style, background-color 0.3s ease-in-out;
+  transition: font-style, background-color 0.2s ease-in-out;
   padding: 10px 20px; /* Ajouter de l'espace autour du texte */
   border-radius: 20px; /* Courber les contours */
 }
