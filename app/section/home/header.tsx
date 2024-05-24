@@ -2,17 +2,33 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  const handleScroll = () => {
+    if (window.scrollY > 0) {
+      setIsScrolled(true);
+    } else {
+      setIsScrolled(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <header className="fixed w-full left-0 top-0 z-50 bg-black backdrop-filter backdrop-blur-lg shadow-md">
+    <header className={`fixed w-full left-0 top-0 z-50 transition-all duration-200 ${isScrolled ? 'bg-black shadow-md' : 'bg-transparent'}`}>
       <nav className="container mx-auto flex justify-between items-center p-4">
         <Link href="/">
           <div className="logo">
@@ -20,21 +36,21 @@ export const Header = () => {
           </div>
         </Link>
         <div className="hidden md:flex flex-row justify-between items-center gap-3 text-md uppercase">
-        <Link href="#art_section" className="mr-3 hover:text-red-500 font-semibold transition-all duration-200 hover:text-xl hover:italic hover:font-black">
-          Artistes
-        </Link>
-        <Link href="#" className="mr-3 hover:text-red-500 font-semibold transition-all duration-200 hover:text-xl hover:italic hover:font-black">
-          Dernières Sorties
-        </Link>
-        <Link href="#" className="mr-3 hover:text-red-500 font-semibold transition-all duration-200 hover:text-xl hover:italic hover:font-black">
-          Services
-        </Link>
-        <Link href="#news" className="mr-3 hover:text-red-500 font-semibold transition-all duration-200 hover:text-xl hover:italic hover:font-black">
-          News
-        </Link>
-        <Link href="/contact" className="mr-3 hover:text-red-500 font-semibold transition-all duration-200 hover:text-xl hover:italic hover:font-black">
-          Contact
-        </Link>
+          <Link href="#art_section" className="mr-3 hover:text-red-500 font-semibold transition-all duration-200 hover:text-xl hover:italic hover:font-black">
+            Artistes
+          </Link>
+          <Link href="#" className="mr-3 hover:text-red-500 font-semibold transition-all duration-200 hover:text-xl hover:italic hover:font-black">
+            Dernières Sorties
+          </Link>
+          <Link href="#" className="mr-3 hover:text-red-500 font-semibold transition-all duration-200 hover:text-xl hover:italic hover:font-black">
+            Services
+          </Link>
+          <Link href="#news" className="mr-3 hover:text-red-500 font-semibold transition-all duration-200 hover:text-xl hover:italic hover:font-black">
+            News
+          </Link>
+          <Link href="/contact" className="mr-3 hover:text-red-500 font-semibold transition-all duration-200 hover:text-xl hover:italic hover:font-black">
+            Contact
+          </Link>
 
           <div className="join-us flex flex-row justify-between items-center gap-5 mr-5 text-1xl">
             <button className="jobsbutton hover:bg-red-700 hover:text-white">

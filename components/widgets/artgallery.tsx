@@ -138,24 +138,24 @@ const ArtGallery: React.FC = () => {
 
 
     return (
-      <section className="relative h-[1100px] w-full bg-black text-white" id="art_section">
+      <section className="relative w-full pb-10 pt-5 bg-black text-white" id="art_section">
       <div className="bg-black text-white">
-        <div className="text-center py-8">
-          <h1 className="text-4xl font-bold">NOS ARTISTES</h1>
-          <p className="mt-2">Découvre la liste de nos artistes et l accompagnement qu on leur propose.</p>
+        <div className="text-center py-6">
+          <h1 className="text-4xl md:text-4xl lg:text-4xl font-bold text-white">NOS ARTISTES</h1>
+          <p className="mt-2 text-sm md:text-base lg:text-lg text-white">Découvre la liste de nos artistes et l accompagnement qu on leur propose.</p>
           <div className="flex justify-center my-4">
             {categories.map((categorie) => (
               <button
                 key={categorie}
                 onClick={() => setCategorieActive(categorie)}
-                className={`mx-2 text-sm font-semibold  opacity-55 hover:opacity-100 hover:text-white ${categorieActive === categorie ? "text-red-500" : "text-gray-400"}`}
+                className={`mx-2 text-xs sm:text-sm md:text-base lg:text-lg font-semibold hover:italic transition-all duration-200 opacity-55 hover:opacity-100 hover:text-white ${categorieActive === categorie ? "text-red-500 italic" : "text-gray-400"}`}
               >
                 {categorie.toUpperCase()}
               </button>
             ))}
           </div>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-8 p-6 justify-items-center">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-8 p-6 pt-0 justify-items-center">
         {artistesFiltres.map((artiste) => (
           <Link href={artiste.link} key={artiste.link}>
             <div className="flex flex-col items-center w-300 opacity-55 hover:opacity-100">

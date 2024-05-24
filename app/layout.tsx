@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import ScrollToTopButton from './scroll-to-top-button';
 import "./globals.css";
 import { Header } from "@/app/section/home/header";
 import Footer from "./section/home/footer";
@@ -26,6 +27,7 @@ export default function RootLayout({
 <link href="https://api.fontshare.com/v2/css?f[]=clash-display@200,400,700,500,600,1,300&display=swap" rel="stylesheet"/>
       </head>
       <body className="bg-[#141414] text-white ${inter.className}">
+      <ScrollToTopButton />
         <Header />
 
         {children}

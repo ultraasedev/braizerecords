@@ -131,9 +131,9 @@ const NewsSection: React.FC = () => {
   };
 
   return (
-    <section className="w-full mx-auto px-4 pb-10 md:pb-20 lg:pb-20 bg-black" id="news">
+    <section className="w-full mx-auto px-4 pb-10 md:pb-20 lg:pb-20 pt-10 bg-black" id="news">
       <div className="text-center py-8 mb-2">
-        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">NEWS</h1>
+        <h1 className="text-4xl md:text-4xl lg:text-4xl font-bold text-white">NEWS</h1>
         <p className="mt-2 text-sm md:text-base lg:text-lg text-white">
           Decouvre toutes les entendues de notre Prestations Labels et Services ainsi que nos differents Poles d'activites.
         </p>

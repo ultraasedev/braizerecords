@@ -37,7 +37,7 @@ export const HomeSlider = () => {
 
     return ( 
       <>
-         <div className="h-dvh relative">
+         <div className="h-dvh relative pb-5">
       <ul>
         <SliderItem
           itemActive={itemActive}

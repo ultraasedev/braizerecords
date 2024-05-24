@@ -12,7 +12,7 @@ interface ThumbnailsItemsProps {
 
 export const ThumbnailsItems = ({itemActive, id, image, name, description ,onClick}: ThumbnailsItemsProps) => {
     return ( 
-        <li role="button" onClick={onClick} className={cn("h-[250px]  shrink-0 transition-all duration-300 overflow-hidden relative after:absolute after:w-full after-h-full after:h-full after:left-0 after:bottom-0 after:bg-thumbnails hover:brightness-150", itemActive === id ? "w-[200px] brightness-150" : "w-[50px] brightness-50")}>
+        <li role="button" onClick={onClick} className={cn("h-[250px]  shrink-0 transition-all duration-300 overflow-hidden relative after:absolute after:w-full after-h-full after:h-full after:left-0 after:bottom-0 after:bg-thumbnails hover:brightness-150", itemActive === id ? "w-[200px] brightness-150 hover:italic transition-all duration-200" : "w-[50px] brightness-50")}>
         <div className="relative w-full h-full rounded-lg ">
         <Image src={image} alt="image" fill className="object-cover rounded-lg"/>
         </div>

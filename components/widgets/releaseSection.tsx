@@ -33,35 +33,35 @@ const ReleaseSection: React.FC = () => {
   return (
     <section className="bg-black py-5 px-4 text-center">
         <div className="text-center py-8">
-          <h1 className="text-4xl font-bold">NOS DERNIERES REALISATIONS</h1>
-          <p className="mt-2">Decouvre notre discographie , nos dernieres realisations et clip .</p>
-          <div className="flex justify-center my-4">
+          <h1 className="text-4xl md:text-4xl lg:text-4xl font-bold text-white">DERNIERES SORTIES</h1>
+          <p className="mt-2 text-sm md:text-base lg:text-lg text-white">Decouvre notre discographie , nos dernieres realisations et clip .</p>
+          <div className="flex justify-center my-4 mt-5 mb-3">
         <span
-          className={`cursor-pointer mx-2 text-sm font-semibold uppercase  px-4 py-2 ${activeFilter === 'all' ? 'text-red-500' : 'text-gray-400'}`}
+          className={`mx-2 uppercase cursor-pointer text-sm sm:text-sm md:text-base lg:text-lg font-semibold transition-all duration-200 hover:italic opacity-55 hover:opacity-100 hover:text-white ${activeFilter === 'all' ? 'text-red-500 italic' : 'text-gray-400'}`}
           onClick={() => filterCards('all')}
         >
           All
         </span>
         <span
-          className={`cursor-pointer px-4 py-2 text-sm font-semibold uppercase  opacity-55 hover:opacity-100 hover:text-white ${activeFilter === 'single' ? 'text-red-500' : 'text-gray-400'}`}
+          className={`mx-2 uppercase cursor-pointer text-sm sm:text-sm md:text-base lg:text-lg font-semibold transition-all duration-200 hover:italic opacity-55 hover:opacity-100 hover:text-white ${activeFilter === 'single' ? 'text-red-500 italic' : 'text-gray-400'}`}
           onClick={() => filterCards('single')}
         >
           Single
         </span>
         <span
-          className={`cursor-pointer px-4 py-2 text-sm font-semibold uppercase  opacity-55 hover:opacity-100 hover:text-white ${activeFilter === 'ep' ? 'text-red-500' : 'text-gray-400'}`}
+          className={`mx-2 uppercase cursor-pointer text-sm sm:text-sm md:text-base lg:text-lg font-semibold transition-all duration-200 hover:italic opacity-55 hover:opacity-100 hover:text-white ${activeFilter === 'ep' ? 'text-red-500 italic' : 'text-gray-400'}`}
           onClick={() => filterCards('ep')}
         >
           EP
         </span>
         <span
-          className={`cursor-pointer px-4 py-2 text-sm font-semibold uppercase  opacity-55 hover:opacity-100 hover:text-white ${activeFilter === 'album' ? 'text-red-500' : 'text-gray-400'}`}
+          className={`mx-2 uppercase cursor-pointer text-sm sm:text-sm md:text-base lg:text-lg font-semibold transition-all duration-200 hover:italic opacity-55 hover:opacity-100 hover:text-white ${activeFilter === 'album' ? 'text-red-500 italic' : 'text-gray-400'}`}
           onClick={() => filterCards('album')}
         >
           Albums
         </span>
         <span
-          className={`cursor-pointer px-4 py-2 text-sm font-semibold uppercase  opacity-55 hover:opacity-100 hover:text-white ${activeFilter === 'clip' ? 'text-red-500' : 'text-gray-400'}`}
+          className={`mx-2 uppercase cursor-pointer text-sm sm:text-sm md:text-base lg:text-lg font-semibold transition-all duration-200 hover:italic opacity-55 hover:opacity-100 hover:text-white ${activeFilter === 'clip' ? 'text-red-500' : 'text-gray-400'}`}
           onClick={() => filterCards('clip')}
         >
           Clip
