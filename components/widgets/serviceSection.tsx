@@ -7,7 +7,7 @@ const ServiceSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center py-8 mb-6">
           <h1 className="text-4xl md:text-4xl lg:text-4xl font-bold text-white">LABELS & SERVICES</h1>
-          <p className="mt-2 text-sm md:text-base lg:text-lg text-white">
+          <p className="mt-2 text-sm md:text-base lg:text-lg text-white font-semibold">
             Découvrez toutes les étendues de nos Prestations Labels & Services ainsi que nos différents Pôles d'activités.
           </p>
         </div>

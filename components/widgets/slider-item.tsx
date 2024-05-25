@@ -53,7 +53,7 @@ export const SliderItem = ({
           itemActive === id && "animate-show-content animation-delay-4"
         )}
       >
-        <h3 className="text-5xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-bold">
+        <h3 className="text-3xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-6xl font-bold">
           {title}
         </h3>
       </div>
@@ -75,7 +75,7 @@ export const SliderItem = ({
           itemActive === id && "animate-show-content animation-delay-6"
         )}
       >
-        <button className="text-xl sm:text-xl md:text-2xl lg:text-2xl xl:text-2xl flex items-center focus:outline-none cta-button font-bold">
+        <button className="text-md sm:text-lg md:text-2xl lg:text-2xl xl:text-2xl flex items-center focus:outline-none cta-button font-bold">
         <i className={buttonActionIcon}></i>&nbsp;&nbsp;<span className="uppercase">{buttonActionTitle}</span>
         </button>
       </div>

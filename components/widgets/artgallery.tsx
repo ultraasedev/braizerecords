@@ -141,19 +141,27 @@ const ArtGallery: React.FC = () => {
       <section className="relative w-full pb-10 pt-5 bg-black text-white" id="art_section">
       <div className="bg-black text-white">
         <div className="text-center py-6">
-          <h1 className="text-4xl md:text-4xl lg:text-4xl font-bold text-white">NOS ARTISTES</h1>
-          <p className="mt-2 text-sm md:text-base lg:text-lg text-white">Découvre la liste de nos artistes et l accompagnement qu on leur propose.</p>
-          <div className="flex justify-center my-4">
-            {categories.map((categorie) => (
-              <button
-                key={categorie}
-                onClick={() => setCategorieActive(categorie)}
-                className={`mx-2 text-xs sm:text-sm md:text-base lg:text-lg font-semibold hover:italic transition-all duration-200 opacity-55 hover:opacity-100 hover:text-white ${categorieActive === categorie ? "text-red-500 italic" : "text-gray-400"}`}
-              >
-                {categorie.toUpperCase()}
-              </button>
-            ))}
-          </div>
+          <h1 className="text-4xl md:text-4xl lg:text-4xl font-semibold uppercase">
+          Nos <span className="mx-1 text-red-500 font-black text-4xl relative inline-block stroke-current">
+            ARTISTES
+            <svg className="absolute -bottom-0.5 w-full max-h-1.5" viewBox="0 0 55 5" xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="none">
+            <path d="M0.652466 4.00002C15.8925 2.66668 48.0351 0.400018 54.6853 2.00002" stroke-width="2"></path>
+        </svg>
+            </span></h1>
+
+          <p className="mt-2 text-sm md:text-base lg:text-lg text-white font-semibold">Découvre la liste de nos artistes et l accompagnement qu on leur propose.</p>
+          <div className="flex flex-wrap justify-center my-4">
+  {categories.map((categorie) => (
+    <button
+      key={categorie}
+      onClick={() => setCategorieActive(categorie)}
+      className={`m-2 text-lg sm:text-lg md:text-lg lg:text-lg font-semibold hover:italic transition-all duration-200 opacity-55 hover:opacity-100 hover:text-white ${categorieActive === categorie ? "text-red-500 italic" : "text-gray-400"}`}
+    >
+      {categorie.toUpperCase()}
+    </button>
+  ))}
+</div>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-8 p-6 pt-0 justify-items-center">
         {artistesFiltres.map((artiste) => (

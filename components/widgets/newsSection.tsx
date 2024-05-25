@@ -1,6 +1,15 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from 'next/image';
+
+interface NewsItem {
+  id: number;
+  title: string;
+  date: string;
+  commentsCount: number;
+  category: string;
+  imageUrl: string;
+}
 
 interface NewsItem {
   id: number;
@@ -111,16 +120,28 @@ const newsData: NewsItem[] = [
   },
 ];
 
-
 const NewsSection: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startPos, setStartPos] = useState(0);
+  const [currentTranslate, setCurrentTranslate] = useState(0);
+  const [prevTranslate, setPrevTranslate] = useState(0);
+  const [isUserInteracting, setIsUserInteracting] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveIndex((current) => (current === newsData.length - 4 ? 0 : current + 1));
-    }, 3000); // Ajusté pour une démo plus rapide, rechangez à 30000 pour 30 secondes
-    return () => clearInterval(interval);
-  }, []);
+    if (!isUserInteracting) {
+      const interval = setInterval(() => {
+        setActiveIndex((current) => (current === newsData.length - 4 ? 0 : current + 1));
+      }, 5000);
+      return () => clearInterval(interval);
+    }
+  }, [isUserInteracting]);
+
+  useEffect(() => {
+    setCurrentTranslate(-activeIndex * 100 / 4);
+    setPrevTranslate(-activeIndex * 100 / 4);
+  }, [activeIndex]);
 
   const handlePrevClick = () => {
     setActiveIndex(prevIndex => (prevIndex === 0 ? newsData.length - 4 : prevIndex - 1));
@@ -130,23 +151,98 @@ const NewsSection: React.FC = () => {
     setActiveIndex(prevIndex => (prevIndex === newsData.length - 4 ? 0 : prevIndex + 1));
   };
 
+  const touchStart = (event: React.TouchEvent) => {
+    setIsDragging(true);
+    setIsUserInteracting(true);
+    setStartPos(event.touches[0].clientX);
+    document.body.style.userSelect = 'none'; // Désactive la sélection de texte
+  };
+
+  const touchMove = (event: React.TouchEvent) => {
+    if (isDragging) {
+      const currentPosition = event.touches[0].clientX;
+      const newTranslate = prevTranslate + ((currentPosition - startPos) / containerRef.current!.offsetWidth) * 100;
+      setCurrentTranslate(newTranslate);
+    }
+  };
+
+  const touchEnd = () => {
+    setIsDragging(false);
+    document.body.style.userSelect = ''; // Réactive la sélection de texte
+    setIsUserInteracting(false);
+    const movedBy = currentTranslate - prevTranslate;
+    if (movedBy < -25) {
+      handleNextClick();
+    } else if (movedBy > 25) {
+      handlePrevClick();
+    } else {
+      setCurrentTranslate(prevTranslate);
+    }
+  };
+
+  const mouseStart = (event: React.MouseEvent) => {
+    setIsDragging(true);
+    setIsUserInteracting(true);
+    setStartPos(event.clientX);
+    document.body.style.userSelect = 'none'; // Désactive la sélection de texte
+  };
+
+  const mouseMove = (event: React.MouseEvent) => {
+    if (isDragging) {
+      const currentPosition = event.clientX;
+      const newTranslate = prevTranslate + ((currentPosition - startPos) / containerRef.current!.offsetWidth) * 100;
+      setCurrentTranslate(newTranslate);
+    }
+  };
+
+  const mouseEnd = () => {
+    setIsDragging(false);
+    document.body.style.userSelect = ''; // Réactive la sélection de texte
+    setIsUserInteracting(false);
+    const movedBy = currentTranslate - prevTranslate;
+    if (movedBy < -25) {
+      handleNextClick();
+    } else if (movedBy > 25) {
+      handlePrevClick();
+    } else {
+      setCurrentTranslate(prevTranslate);
+    }
+  };
+
   return (
     <section className="w-full mx-auto px-4 pb-10 md:pb-20 lg:pb-20 pt-10 bg-black" id="news">
       <div className="text-center py-8 mb-2">
-        <h1 className="text-4xl md:text-4xl lg:text-4xl font-bold text-white">NEWS</h1>
-        <p className="mt-2 text-sm md:text-base lg:text-lg text-white">
+        <h1 className="text-4xl md:text-4xl lg:text-4xl font-semibold uppercase">
+          Nos Dernieres <span className="mx-1 text-red-500 font-black text-4xl relative inline-block stroke-current">
+            NEWS
+            <svg className="absolute -bottom-0.5 w-full max-h-1.5" viewBox="0 0 55 5" xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="none">
+            <path d="M0.652466 4.00002C15.8925 2.66668 48.0351 0.400018 54.6853 2.00002" strokeWidth="2"></path>
+        </svg>
+            </span></h1>
+        <p className="mt-2 text-sm md:text-base lg:text-lg text-white font-semibold">
           Decouvre toutes les entendues de notre Prestations Labels et Services ainsi que nos differents Poles d'activites.
         </p>
       </div>
-      <div className="relative overflow-hidden">
-        <div className="flex transition-transform duration-1000" style={{ transform: `translateX(-${activeIndex * 100 / 4}%)` }}>
+      <div 
+        className="relative overflow-hidden" 
+        ref={containerRef}
+        onMouseDown={mouseStart}
+        onMouseMove={mouseMove}
+        onMouseUp={mouseEnd}
+        onMouseLeave={() => isDragging && mouseEnd()}
+        onTouchStart={touchStart}
+        onTouchMove={touchMove}
+        onTouchEnd={touchEnd}
+      >
+        <div className="flex transition-transform duration-1000" style={{ transform: `translateX(${currentTranslate}%)` }}>
           {newsData.map((news, index) => (
             <div key={index} className="min-w-[50%] md:min-w-[30%] lg:min-w-[30%] p-4">
               <div className="flex flex-col items-center mt-[20px] space-y-4">
                 <Image src={news.imageUrl} alt={news.title} width={500} height={300} className="rounded-lg" />
                 <h3 className="text-sm md:text-base lg:text-lg text-red-500">{news.category}</h3>
                 <p className="font-semibold text-sm md:text-base lg:text-lg text-white">{news.title}</p>
-                <p className="text-sm md:text-base lg:text-lg text-white">{news.date} • {news.commentsCount} Commentaires</p>
+                <p className="text-md md:text-md lg:text-md font-normal text-white">{news.date} • {news.commentsCount} Commentaires</p>
               </div>
             </div>
           ))}
