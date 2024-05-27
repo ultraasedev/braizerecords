@@ -35,11 +35,6 @@ export const Header = () => {
             <Image src="/logo.png" width="100" height="100" alt="Logo" />
           </div>
         </Link>
-        {isOpen && (
-          <div className="text-3xl font-black uppercase text-white md:hidden">
-            BraizeRecords
-          </div>
-        )}
         <div className="hidden md:flex flex-row justify-between items-center gap-3 text-md uppercase">
           <Link href="/" className="mr-3 hover:text-red-500 font-semibold transition-all duration-200 hover:text-xl hover:italic hover:font-black">
             <i className="bx bx-home-alt text-2xl"></i>

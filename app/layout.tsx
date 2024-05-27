@@ -28,7 +28,7 @@ export default function RootLayout({
 <link href="https://api.fontshare.com/v2/css?f[]=clash-display@200,400,700,500,600,1,300&display=swap" rel="stylesheet"/>
       </head>
       <Loader /> {/* Ajoutez le composant Loader ici */}
-      <body className="bg-[#141414] text-white ${inter.className}">
+      <body className="bg-black text-white ${inter.className}">
       <ScrollToTopButton />
         <Header />
 

@@ -1,7 +1,8 @@
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { FaPlayCircle, FaTicketAlt } from 'react-icons/fa';
 
-interface SliderItemPropos {
+interface SliderItemProps {
   itemActive: number;
   id: number;
   images: string;
@@ -24,7 +25,11 @@ export const SliderItem = ({
   description,
   buttonActionTitle,
   buttonActionIcon,
-}: SliderItemPropos) => {
+  buttonActionLink,
+}: SliderItemProps) => {
+  // Détermine l'icône à afficher en fonction de la valeur de buttonActionIcon
+  const ActionIcon = buttonActionIcon === 'fa-solid fa-circle-play' ? FaPlayCircle : FaTicketAlt;
+
   return (
     <li
       className={cn(
@@ -39,8 +44,8 @@ export const SliderItem = ({
       <div className="space-y-2 absolute left-[10%] top-[23%] w-[400px] max-w-[80%] z-10">
         <button
           className={cn(
-            "bg-white text-black text-center min-w-[50%] h-[40%] align-center rounded-sm font-semibold tracking-[2.5px] opacity-0 text-sm sm:text-sm md:text-sm lg:text-base xl:text-lg",
-            itemActive === id && "animate-show-content"
+            "bg-white text-black text-center min-w-[50%] h-[40%] align-center rounded-sm font-semibold tracking-[2.5px] text-sm sm:text-sm md:text-sm lg:text-base xl:text-lg",
+            itemActive === id ? "opacity-100 animate-show-content" : "opacity-0",
           )}
         >
           {buttonTypeTitle}
@@ -49,35 +54,36 @@ export const SliderItem = ({
       {/* Title */}
       <div
         className={cn(
-          "space-y-2 absolute left-[10%] top-[30%] w-[1000px] max-w-[80%] z-10 text-white opacity-0",
+          "space-y-2 absolute left-[10%] top-[30%] w-[1000px] max-w-[80%] z-10 text-white",
           itemActive === id && "animate-show-content animation-delay-4"
         )}
       >
-        <h3 className="text-5xl sm:text-6xl md:text-6xl lg:text-7xl xl:text-7xl font-bold line-clamp-2 overflow-hidden text-ellipsis">
+        <h3 className="text-3xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-6xl font-bold line-clamp-2">
           {title}
         </h3>
       </div>
       {/* Description */}
       <div
         className={cn(
-          "space-y-2 absolute left-[10%] top-[42%] w-[850px] max-w-[80%] z-10 text-white opacity-0",
+          "space-y-2 absolute left-[10%] top-[43%] w-[850px] max-w-[80%] z-10 text-white",
           itemActive === id && "animate-show-content animation-delay-5"
         )}
       >
-        <p className="text-base sm:text-lg md:text-xl lg:text-xl xl:text-2xl font-normal mb-6 sm:mb-4 md:mb-2 lg:mb-2 line-clamp-3 overflow-hidden text-ellipsis">
+        <p className="text-base sm:text-lg md:text-xl lg:text-xl xl:text-2xl font-normal mb-6 sm:mb-4 md:mb-2 lg:mb-2 line-clamp-3">
           {description}
         </p>
       </div>
       {/* Link */}
       <div
         className={cn(
-          "space-y-2 absolute left-[10%] top-[54%] z-10 text-red-500 hover:text-white opacity-0",
+          "space-y-2 absolute left-[10%] top-[58%] z-10 mb-4 text-red-500 hover:text-white",
           itemActive === id && "animate-show-content animation-delay-6"
         )}
       >
-        <button className="text-md sm:text-lg md:text-xl lg:text-xl xl:text-xl flex items-center focus:outline-none cta-button font-bold bottom-5">
-          <i className={buttonActionIcon}></i>&nbsp;&nbsp;<span className="uppercase">{buttonActionTitle}</span>
-        </button>
+        <a href={buttonActionLink} className="text-md sm:text-lg md:text-2xl lg:text-2xl xl:text-2xl flex items-center focus:outline-none cta-button font-bold">
+          <ActionIcon className="mr-2" />
+          <span className="uppercase">{buttonActionTitle}</span>
+        </a>
       </div>
     </li>
   );
