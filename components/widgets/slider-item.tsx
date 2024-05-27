@@ -53,30 +53,30 @@ export const SliderItem = ({
           itemActive === id && "animate-show-content animation-delay-4"
         )}
       >
-        <h3 className="text-3xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-6xl font-bold">
+        <h3 className="text-5xl sm:text-6xl md:text-6xl lg:text-7xl xl:text-7xl font-bold line-clamp-2 overflow-hidden text-ellipsis">
           {title}
         </h3>
       </div>
       {/* Description */}
       <div
         className={cn(
-          "space-y-2 absolute left-[10%] top-[43%] w-[850px] max-w-[80%] z-10 text-white opacity-0",
+          "space-y-2 absolute left-[10%] top-[42%] w-[850px] max-w-[80%] z-10 text-white opacity-0",
           itemActive === id && "animate-show-content animation-delay-5"
         )}
       >
-        <p className="text-base sm:text-lg md:text-xl lg:text-xl xl:text-2xl font-normal mb-6 sm:mb-4 md:mb-2 lg:mb-2">
+        <p className="text-base sm:text-lg md:text-xl lg:text-xl xl:text-2xl font-normal mb-6 sm:mb-4 md:mb-2 lg:mb-2 line-clamp-3 overflow-hidden text-ellipsis">
           {description}
         </p>
       </div>
       {/* Link */}
       <div
         className={cn(
-          "space-y-2 absolute left-[10%] top-[58%] w-[800px] max-w-[80%] sm:mb-8 md:mb-4 lg:mb-4 z-10 mb-4 text-red-500 hover:text-white opacity-0",
+          "space-y-2 absolute left-[10%] top-[54%] z-10 text-red-500 hover:text-white opacity-0",
           itemActive === id && "animate-show-content animation-delay-6"
         )}
       >
-        <button className="text-md sm:text-lg md:text-2xl lg:text-2xl xl:text-2xl flex items-center focus:outline-none cta-button font-bold">
-        <i className={buttonActionIcon}></i>&nbsp;&nbsp;<span className="uppercase">{buttonActionTitle}</span>
+        <button className="text-md sm:text-lg md:text-xl lg:text-xl xl:text-xl flex items-center focus:outline-none cta-button font-bold bottom-5">
+          <i className={buttonActionIcon}></i>&nbsp;&nbsp;<span className="uppercase">{buttonActionTitle}</span>
         </button>
       </div>
     </li>

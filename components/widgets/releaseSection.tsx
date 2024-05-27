@@ -33,8 +33,8 @@ const ReleaseSection: React.FC = () => {
   return (
     <section className="bg-black py-5 px-4 text-center">
         <div className="text-center py-8">
-        <h1 className="text-4xl md:text-4xl lg:text-4xl font-semibold uppercase">
-          DERNIERES <span className="mx-1 text-red-500 font-black text-4xl relative inline-block stroke-current">
+        <h1 className="text-2xl xs:text-2xl sm:text-2xl md:text-4xl lg:text-4xl font-semibold uppercase">
+          DERNIERES <span className="mx-1 text-red-500 font-black text-2xl xs:text-2xl sm:text-2xl md:text-4xl lg:text-4xl relative inline-block stroke-current">
             SORTIES
             <svg className="absolute -bottom-0.5 w-full max-h-1.5" viewBox="0 0 55 5" xmlns="http://www.w3.org/2000/svg"
             preserveAspectRatio="none">

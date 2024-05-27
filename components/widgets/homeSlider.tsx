@@ -102,7 +102,7 @@ export const HomeSlider = () => {
         />
       </ul>
     <SliderArrows onClickPrev={onPrev} onClickNext={onNext} />
-    <ul className="absolute bottom-0 z-10 flex sm:justify-end gap-3 w-full h-[250px] px-10 overflow-y-hidden overflox-x-auto">
+    <ul className="absolute bottom-0 z-10 flex sm:justify-end gap-3 w-full px-10 overflow-y-hidden overflox-x-auto">
       <ThumbnailsItems itemActive={itemActive} image="/slide_01.png" id={1} name="Lashka - Burn Out" description="Apres la tournée des Zenith en 2023 , Lashka reviens.." onClick={() => setItemActive(1)}/>
       <ThumbnailsItems itemActive={itemActive} image="/slide_02.png" id={2} name="Shakaoui - Olympia Nantes" description="Apres la tournée des Zenith en 2023 , Lashka reviens.." onClick={() => setItemActive(2)}/>
       <ThumbnailsItems itemActive={itemActive} image="/slide_03.png" id={3} name="Makadam - Fly Air" description="Apres la tournée des Zenith en 2023 , Lashka reviens.." onClick={() => setItemActive(3)}/>

@@ -138,11 +138,11 @@ const ArtGallery: React.FC = () => {
 
 
     return (
-      <section className="relative w-full pb-10 pt-5 bg-black text-white" id="art_section">
+      <section className="relative w-full pb-10 pt-5 bg-black text-white animate-show-content animation-delay-6" id="art_section">
       <div className="bg-black text-white">
         <div className="text-center py-6">
-          <h1 className="text-4xl md:text-4xl lg:text-4xl font-semibold uppercase">
-          Nos <span className="mx-1 text-red-500 font-black text-4xl relative inline-block stroke-current">
+          <h1 className="text-2xl xs:text-2xl sm:text-2xl md:text-4xl lg:text-4xl font-semibold uppercase">
+          Nos <span className="mx-1 text-red-500 font-black text-2xl xs:text-2xl sm:text-2xl md:text-4xl lg:text-4xl relative inline-block stroke-current">
             ARTISTES
             <svg className="absolute -bottom-0.5 w-full max-h-1.5" viewBox="0 0 55 5" xmlns="http://www.w3.org/2000/svg"
             preserveAspectRatio="none">

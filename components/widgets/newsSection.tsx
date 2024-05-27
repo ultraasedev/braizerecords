@@ -212,8 +212,8 @@ const NewsSection: React.FC = () => {
   return (
     <section className="w-full mx-auto px-4 pb-10 md:pb-20 lg:pb-20 pt-10 bg-black" id="news">
       <div className="text-center py-8 mb-2">
-        <h1 className="text-4xl md:text-4xl lg:text-4xl font-semibold uppercase">
-          Nos Dernieres <span className="mx-1 text-red-500 font-black text-4xl relative inline-block stroke-current">
+        <h1 className="text-2xl xs:text-2xl sm:text-2xl md:text-4xl lg:text-4xl font-semibold uppercase">
+          Nos Dernieres <span className="mx-1 text-red-500 font-black text-2xl xs:text-2xl sm:text-2xl md:text-4xl lg:text-4xl relative inline-block stroke-current">
             NEWS
             <svg className="absolute -bottom-0.5 w-full max-h-1.5" viewBox="0 0 55 5" xmlns="http://www.w3.org/2000/svg"
             preserveAspectRatio="none">
