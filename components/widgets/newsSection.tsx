@@ -1,15 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import Image from 'next/image';
-
-interface NewsItem {
-  id: number;
-  title: string;
-  date: string;
-  commentsCount: number;
-  category: string;
-  imageUrl: string;
-}
+import { FaRegCommentAlt, FaRegCalendarAlt } from 'react-icons/fa';
 
 interface NewsItem {
   id: number;
@@ -120,6 +112,7 @@ const newsData: NewsItem[] = [
   },
 ];
 
+
 const NewsSection: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
@@ -129,6 +122,7 @@ const NewsSection: React.FC = () => {
   const [isUserInteracting, setIsUserInteracting] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
+  
   useEffect(() => {
     if (!isUserInteracting) {
       const interval = setInterval(() => {
@@ -209,40 +203,38 @@ const NewsSection: React.FC = () => {
     }
   };
 
+
   return (
     <section className="w-full mx-auto px-4 pb-10 md:pb-20 lg:pb-20 pt-10 bg-black" id="news">
       <div className="text-center py-8 mb-2">
-        <h1 className="text-2xl xs:text-2xl sm:text-2xl md:text-4xl lg:text-4xl font-semibold uppercase">
-          Nos Dernieres <span className="mx-1 text-red-500 font-black text-2xl xs:text-2xl sm:text-2xl md:text-4xl lg:text-4xl relative inline-block stroke-current">
+        <h1 className="text-4xl font-semibold uppercase relative">
+          Nos Dernieres <span className="text-red-500 font-black relative inline-block">
             NEWS
-            <svg className="absolute -bottom-0.5 w-full max-h-1.5" viewBox="0 0 55 5" xmlns="http://www.w3.org/2000/svg"
-            preserveAspectRatio="none">
-            <path d="M0.652466 4.00002C15.8925 2.66668 48.0351 0.400018 54.6853 2.00002" strokeWidth="2"></path>
-        </svg>
-            </span></h1>
-        <p className="mt-2 text-sm md:text-base lg:text-lg text-white font-semibold">
-          Decouvre toutes les entendues de notre Prestations Labels et Services ainsi que nos differents Poles d'activites.
+            <svg className="absolute -bottom-0.5 w-full max-h-1.5" viewBox="0 0 55 5" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+              <path d="M0.652466 4.00002C15.8925 2.66668 48.0351 0.400018 54.6853 2.00002" strokeWidth="2"></path>
+            </svg>
+          </span>
+        </h1>
+        <p className="mt-2 text-lg text-white font-semibold">
+          Découvre toutes les nouveautés de notre label et de nos artistes.
         </p>
       </div>
-      <div 
-        className="relative overflow-hidden" 
-        ref={containerRef}
-        onMouseDown={mouseStart}
-        onMouseMove={mouseMove}
-        onMouseUp={mouseEnd}
-        onMouseLeave={() => isDragging && mouseEnd()}
-        onTouchStart={touchStart}
-        onTouchMove={touchMove}
-        onTouchEnd={touchEnd}
-      >
+      <div className="relative overflow-hidden" ref={containerRef}>
         <div className="flex transition-transform duration-1000" style={{ transform: `translateX(${currentTranslate}%)` }}>
           {newsData.map((news, index) => (
             <div key={index} className="min-w-[50%] md:min-w-[30%] lg:min-w-[30%] p-4">
-              <div className="flex flex-col items-center mt-[20px] space-y-4">
-                <Image src={news.imageUrl} alt={news.title} width={500} height={300} className="rounded-lg" />
-                <h3 className="text-sm md:text-base lg:text-lg text-red-500">{news.category}</h3>
-                <p className="font-semibold text-sm md:text-base lg:text-lg text-white">{news.title}</p>
-                <p className="text-md md:text-md lg:text-md font-normal text-white">{news.date} • {news.commentsCount} Commentaires</p>
+              <div className="bg-[#0f0f0f] rounded-lg overflow-hidden shadow-md hover:shadow-xl">
+                <Image src={news.imageUrl} alt={news.title} width={500} height={300} className="rounded-t-lg" />
+                <div className="p-4">
+                  <h3 className="text-lg text-red-500 truncate">{news.category}</h3>
+                  <p className="font-semibold text-lg text-white line-clamp-2">{news.title}</p>
+                  <div className="flex items-center text-md text-white space-x-2 mt-2">
+                    <FaRegCalendarAlt />
+                    <p>{news.date}</p>
+                    <FaRegCommentAlt />
+                    <p>{news.commentsCount}</p>
+                  </div>
+                </div>
               </div>
             </div>
           ))}

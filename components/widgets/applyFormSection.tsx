@@ -52,9 +52,9 @@ const ApplyFormSection = () => {
       <div className="absolute inset-0 bg-black opacity-50"></div>
       <div className="relative container mx-auto">
         <div className="text-center py-6">
-          <h1 className="text-2xl xs:text-2xl sm:text-2xl md:text-4xl lg:text-4xl font-black bg-clip-text text-transparent bg-gradient-to-r from-red-700 to-orange-600 uppercase">
-            <span className="mx-1 text-red-500 font-black text-4xl relative inline-block stroke-current">
-              Soumettre une maquette
+          <h1 className="text-2xl xs:text-2xl sm:text-2xl md:text-4xl lg:text-4xl font-black bg-clip-text text-red-700 uppercase">
+          Soumettre une <span className="mx-1 text-red-700 font-black text-4xl relative inline-block stroke-current">
+              maquette
               <svg
                 className="absolute -bottom-0.5 w-full max-h-1.5"
                 viewBox="0 0 55 5"
@@ -73,7 +73,7 @@ const ApplyFormSection = () => {
           <div className="text-center">
             <button
               onClick={toggleFormVisibility}
-              className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-6 rounded transition duration-200"
+              className="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded transition duration-200"
             >
               Soumettre une maquette
             </button>
@@ -195,7 +195,7 @@ const ApplyFormSection = () => {
               <div className="text-center">
                 <button
                   type="submit"
-                  className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-6 rounded transition duration-200"
+                  className="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded transition duration-200"
                 >
                   Envoyer
                 </button>

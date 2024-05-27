@@ -74,7 +74,7 @@ const ReleaseSection: React.FC = () => {
           Clip
         </span>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center">
+      <div className="grid grid-cols-2 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center">
         {filteredCards.map((card, index) => (
           <div key={index} className="bg-[#1a1a1a] rounded-lg overflow-hidden relative opacity-55 hover:opacity-100">
             <Link href="#">
