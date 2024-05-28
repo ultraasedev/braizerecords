@@ -28,7 +28,7 @@ export const Header = () => {
   }, []);
 
   return (
-    <header className={`fixed w-full left-0 top-0 z-50 transition-all duration-200 ${isScrolled || isOpen ? 'bg-black shadow-md' : 'bg-transparent'}`}>
+    <header className={`fixed w-full left-0 top-0 z-50 transition-all duration-200 ${isScrolled || isOpen ? 'bg-black/50 backdrop-blur-md shadow-md' : 'bg-transparent'}`}>
       <nav className="container mx-auto flex justify-between items-center p-4">
         <Link href="/">
           <div className="logo">
@@ -83,24 +83,24 @@ export const Header = () => {
       {isOpen && (
         <div className="md:hidden flex flex-col items-center bg-black text-white uppercase pb-5">
           <Link href="/" className="mb-2 hover:text-red-500 font-semibold" onClick={toggleMenu}>
-            <i className="bx bx-home-alt text-2xl"></i>
+            <i className="bx bx-home-alt text-3xl"></i>
           </Link>
-          <Link href="#art_section" className="mb-2 hover:text-red-500 font-bold text-xl hover:italic transition-all duration-200" onClick={toggleMenu}>
+          <Link href="#art_section" className="mb-2 hover:text-red-500 font-bold text-3xl hover:italic transition-all duration-200" onClick={toggleMenu}>
             Artistes
           </Link>
-          <Link href="#" className="mb-2 hover:text-red-500 font-bold text-xl hover:italic transition-all duration-200" onClick={toggleMenu}>
+          <Link href="#" className="mb-2 hover:text-red-500 font-bold text-3xl hover:italic transition-all duration-200" onClick={toggleMenu}>
             Dernières Sorties
           </Link>
-          <Link href="#" className="mb-2 hover:text-red-500 font-bold text-xl hover:italic transition-all duration-200" onClick={toggleMenu}>
+          <Link href="#" className="mb-2 hover:text-red-500 font-bold text-3xl hover:italic transition-all duration-200" onClick={toggleMenu}>
             Services
           </Link>
-          <Link href="#news" className="mb-2 hover:text-red-500 font-bold text-xl hover:italic transition-all duration-200" onClick={toggleMenu}>
+          <Link href="#news" className="mb-2 hover:text-red-500 font-bold text-3xl hover:italic transition-all duration-200" onClick={toggleMenu}>
             News
           </Link>
-          <Link href="/contact" className="mb-2 hover:text-red-500 font-bold text-xl hover:italic transition-all duration-200" onClick={toggleMenu}>
+          <Link href="/contact" className="mb-2 hover:text-red-500 font-bold text-3xl hover:italic transition-all duration-200" onClick={toggleMenu}>
             Contact
           </Link>
-          <button className="jobsbutton hover:bg-red-700 hover:text-white mt-2 mb-2">
+          <button className="jobsbutton hover:bg-red-500 hover:text-white mt-2 mb-2">
             <Link href="#" className="text-center uppercase font-semibold text-xs tracking-wider" onClick={toggleMenu}>
               Nous Rejoindre
             </Link>

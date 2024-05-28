@@ -112,7 +112,6 @@ const newsData: NewsItem[] = [
   },
 ];
 
-
 const NewsSection: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
@@ -122,34 +121,33 @@ const NewsSection: React.FC = () => {
   const [isUserInteracting, setIsUserInteracting] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  
   useEffect(() => {
     if (!isUserInteracting) {
       const interval = setInterval(() => {
-        setActiveIndex((current) => (current === newsData.length - 4 ? 0 : current + 1));
+        setActiveIndex((current) => (current === newsData.length - 1 ? 0 : current + 1));
       }, 5000);
       return () => clearInterval(interval);
     }
   }, [isUserInteracting]);
 
   useEffect(() => {
-    setCurrentTranslate(-activeIndex * 100 / 4);
-    setPrevTranslate(-activeIndex * 100 / 4);
+    setCurrentTranslate(-activeIndex * 100);
+    setPrevTranslate(-activeIndex * 100);
   }, [activeIndex]);
 
   const handlePrevClick = () => {
-    setActiveIndex(prevIndex => (prevIndex === 0 ? newsData.length - 4 : prevIndex - 1));
+    setActiveIndex(prevIndex => (prevIndex === 0 ? newsData.length - 1 : prevIndex - 1));
   };
 
   const handleNextClick = () => {
-    setActiveIndex(prevIndex => (prevIndex === newsData.length - 4 ? 0 : prevIndex + 1));
+    setActiveIndex(prevIndex => (prevIndex === newsData.length - 1 ? 0 : prevIndex + 1));
   };
 
   const touchStart = (event: React.TouchEvent) => {
     setIsDragging(true);
     setIsUserInteracting(true);
     setStartPos(event.touches[0].clientX);
-    document.body.style.userSelect = 'none'; // Désactive la sélection de texte
+    document.body.style.userSelect = 'none';
   };
 
   const touchMove = (event: React.TouchEvent) => {
@@ -162,7 +160,7 @@ const NewsSection: React.FC = () => {
 
   const touchEnd = () => {
     setIsDragging(false);
-    document.body.style.userSelect = ''; // Réactive la sélection de texte
+    document.body.style.userSelect = '';
     setIsUserInteracting(false);
     const movedBy = currentTranslate - prevTranslate;
     if (movedBy < -25) {
@@ -178,7 +176,7 @@ const NewsSection: React.FC = () => {
     setIsDragging(true);
     setIsUserInteracting(true);
     setStartPos(event.clientX);
-    document.body.style.userSelect = 'none'; // Désactive la sélection de texte
+    document.body.style.userSelect = 'none';
   };
 
   const mouseMove = (event: React.MouseEvent) => {
@@ -191,7 +189,7 @@ const NewsSection: React.FC = () => {
 
   const mouseEnd = () => {
     setIsDragging(false);
-    document.body.style.userSelect = ''; // Réactive la sélection de texte
+    document.body.style.userSelect = '';
     setIsUserInteracting(false);
     const movedBy = currentTranslate - prevTranslate;
     if (movedBy < -25) {
@@ -202,7 +200,6 @@ const NewsSection: React.FC = () => {
       setCurrentTranslate(prevTranslate);
     }
   };
-
 
   return (
     <section className="w-full mx-auto px-4 pb-10 md:pb-20 lg:pb-20 pt-10 bg-black" id="news">
@@ -222,9 +219,9 @@ const NewsSection: React.FC = () => {
       <div className="relative overflow-hidden" ref={containerRef}>
         <div className="flex transition-transform duration-1000" style={{ transform: `translateX(${currentTranslate}%)` }}>
           {newsData.map((news, index) => (
-            <div key={index} className="min-w-[50%] md:min-w-[30%] lg:min-w-[30%] p-4">
-              <div className="bg-[#0f0f0f] rounded-lg overflow-hidden shadow-md hover:shadow-xl">
-                <Image src={news.imageUrl} alt={news.title} width={500} height={300} className="rounded-t-lg" />
+            <div key={index} className="min-w-[100%] md:min-w-[50%] lg:min-w-[30%] p-4">
+              <div className="bg-[#0f0f0f] rounded-lg overflow-hidden shadow-md transition-all duration-200">
+                <Image src={news.imageUrl} alt={news.title} width={500} height={300} className="rounded-t-lg w-full" />
                 <div className="p-4">
                   <h3 className="text-lg text-red-500 truncate">{news.category}</h3>
                   <p className="font-semibold text-lg text-white line-clamp-2">{news.title}</p>

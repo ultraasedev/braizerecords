@@ -64,6 +64,26 @@ li {
   margin-top: 25px;
 }
 
+.bg-pattern {
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-pattern::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://storage.needpix.com/rsynced_images/red-2673399_1280.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.2; /* Ajustez cette valeur pour changer l'opacité du motif */
+  z-index: -1; /* Place le motif derrière le contenu */
+}
+
+
 .cta-button {
   transition: font-style, background-color 0.2s ease-in-out;
   padding: 10px 20px; /* Ajouter de l'espace autour du texte */
