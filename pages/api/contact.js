@@ -1,5 +1,4 @@
 import nodemailer from 'nodemailer';
-import { sendEmail } from '@/utils/sendEmail';
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
