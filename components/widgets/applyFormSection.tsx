@@ -33,10 +33,48 @@ const ApplyFormSection = () => {
     setFormData({ ...formData, audioFile: event.target.files ? event.target.files[0] : null });
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // Handle form submission logic here
-    console.log(formData);
+
+    const formDataToSend = new FormData();
+    formDataToSend.append('artistName', formData.artistName);
+    formDataToSend.append('fullName', formData.fullName);
+    formDataToSend.append('email', formData.email);
+    formDataToSend.append('instagramLink', formData.instagramLink);
+    formDataToSend.append('youtubeLink', formData.youtubeLink);
+    formDataToSend.append('spotifyDeezerLink', formData.spotifyDeezerLink);
+    if (formData.audioFile) {
+      formDataToSend.append('audioFile', formData.audioFile, formData.audioFile.name);
+    }
+    formDataToSend.append('bio', formData.bio);
+
+    try {
+      const response = await fetch('../../api/apply-form', {
+        method: 'POST',
+        body: formDataToSend,
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        console.log('Form submitted successfully:', result.data);
+        setFormData({
+          artistName: "",
+          fullName: "",
+          email: "",
+          instagramLink: "",
+          youtubeLink: "",
+          spotifyDeezerLink: "",
+          audioFile: null,
+          bio: ""
+        });
+        setIsFormVisible(false);
+      } else {
+        console.error('Error submitting form:', result.message);
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+    }
   };
 
   const toggleFormVisibility = () => {
@@ -127,7 +165,7 @@ const ApplyFormSection = () => {
                 />
               </div>
               <div>
-                <label htmlFor="instagramLink" className="block text-lg mb-2 text-red-500 font-semibold">Lien Instagram</label>
+              <label htmlFor="instagramLink" className="block text-lg mb-2 text-red-500 font-semibold">Lien Instagram</label>
                 <input
                   type="url"
                   id="instagramLink"
@@ -164,12 +202,15 @@ const ApplyFormSection = () => {
               </div>
               <div>
                 <label htmlFor="audioFile" className="block text-lg mb-2 text-red-500 font-semibold">Fichier Audio</label>
-                <label htmlFor="audioFile" className="flex flex-col items-center gap-2 cursor-pointer">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 fill-white stroke-red-500" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
-                  <span className="text-gray-600 font-medium">Importer un fichier</span>
-                </label>
+                <div className="flex items-center gap-2">
+                  <label htmlFor="audioFile" className="flex flex-col items-center gap-2 cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 fill-white stroke-red-500" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    <span className="text-gray-600 font-medium">Importer un fichier</span>
+                  </label>
+                  <span className="text-gray-600">{formData.audioFile ? formData.audioFile.name : 'Aucun fichier sélectionné'}</span>
+                </div>
                 <input
                   type="file"
                   id="audioFile"
